@@ -6,9 +6,32 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
   </head>
 
-  <body>
+  <body class="container-fluid">
+    <header class="row">
+
+      <section class="col-xs-4 left-top">
+        <p>Hey welcome to my<br /> humble blog!</p>
+      </section>
+      <section class="col-xs-4 middle-top">
+        <img src="http://i.imgur.com/Ghn3XpP.png" alt="Ash Profile Photo" class="img-circle" width="200px" height="200px"/>
+      </section>
+      <section class="col-xs-4 right-top">
+         <div class="btn-group social-nav" role="group" aria-label="...">
+
+            <a href="https://www.linkedin.com/in/ash-rhazaly-9445987b/" class="btn btn-social-icon-btn-lg btn-linkedin">
+                <span class="fa fa-linkedin"></span>
+            </a>
+            <a href="https://github.com/AshRhazaly" class="btn btn-social-icon-btn-lg btn-github">
+                <span class="fa fa-github"></span>
+            </a>
+
+        </div>
+      </section>
+    </header>
     <%= yield %>
   </body>
 </html>
