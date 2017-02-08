@@ -13,7 +13,8 @@ class PostsController < ApplicationController
       redirect_to posts_path
       flash[:notice] = "You've published your post successfully."
     else
-      render 'new'
+      redirect_to posts_path
+      flash[:notice] = "Failed."
     end
   end
 
