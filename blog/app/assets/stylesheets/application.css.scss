@@ -1,10 +1,10 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
-
-header {
+@import 'new';
+@import 'form';
+.banner {
   height:175px;
   background-color:#F47A42;
-  position:relative;
 }
 
 .left-top {
@@ -15,7 +15,7 @@ header {
 }
 
 .middle-top img {
-  margin-left:65px;
+  margin-left:75px;
   margin-top:55px;
 }
 
