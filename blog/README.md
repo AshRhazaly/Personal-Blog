@@ -1,24 +1,12 @@
-# README
+#Overview
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A simple blog built using
 
-Things you may want to cover:
+1. Ruby On Rails 5.01
+2. Bootstrap v3.3
 
-* Ruby version
+##How to use
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+1. Clone the repository
+2. Create a post
+3. Feel free to update or delete your post.
