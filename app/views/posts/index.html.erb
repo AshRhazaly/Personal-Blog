@@ -10,7 +10,7 @@
       <article class="blog-post">
          <% @posts.each do |post| %>
          <header class="blog-header"><%= post.title %></header>
-          <section class="blog-author"><%= post.blog_author %></section>
+          <section class="blog-author">Posted by: <%= post.blog_author %></section>
           <section class="blog-content"><%= post.content %></section>
            <footer class="icons">
              <span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>
