@@ -1,25 +1,24 @@
-
-<section class="container-fluid content-body">
-  <section class="container content-post">
-   <% if flash[:notice] %>
-     <div><%= flash[:notice] %></div>
-   <% end %>
-    <article class="blog-post">
-       <% @posts.each do |post| %>
-       <header class="blog-header"><%= post.title %></header>
-        <section class="blog-content"><%= post.content %></section>
-         <footer> <%= link_to 'Edit', edit_post_path(post) %>
-                  <%= link_to 'Delete', post_path(post),
-                          method: :delete,
-                          data: { confirm: 'Are you sure?' } %>
-         </footer>
-       <% end %>
-    </article>
+<section class="container-fluid main-container">
+  <section class="container content-body">
+    <section class="container content-post">
+     <% if flash[:notice] %>
+       <div><%= flash[:notice] %></div>
+     <% end %>
+      <article class="blog-post">
+         <% @posts.each do |post| %>
+         <header class="blog-header"><%= post.title %></header>
+          <section class="blog-content"><%= post.content %></section>
+           <footer class="icons">
+             <span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>
+             <%= link_to 'Edit', edit_post_path(post) %>
+             <span>&nbsp&nbsp&nbsp</span>
+             <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                    <%= link_to 'Delete', post_path(post),
+                            method: :delete,
+                            data: { confirm: 'Are you sure?' } %>
+           </footer>
+         <% end %>
+      </article>
+    </section>
   </section>
 </section>
-
-<button type="button" class="btn btn-default">
-  <span>
-    <%= link_to 'Create a blog post here', new_post_path %>
-  </span>
-</button>
