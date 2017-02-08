@@ -13,8 +13,7 @@ class PostsController < ApplicationController
       redirect_to posts_path
       flash[:notice] = "You've published your post successfully."
     else
-      redirect_to posts_path
-      flash[:notice] = "Failed."
+      render 'new'
     end
   end
 
@@ -44,6 +43,6 @@ class PostsController < ApplicationController
   end
 private
     def post_params
-      params.require(:post).permit(:title, :content)
+      params.require(:post).permit(:title, :blog_author, :content)
     end
 end

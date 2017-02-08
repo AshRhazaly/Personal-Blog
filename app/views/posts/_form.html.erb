@@ -1,9 +1,38 @@
+<% if @post.errors.any? %>
+  <div id="error_explanation">
+    <h2>
+      <%= pluralize(@post.errors.count, "error") %> prohibited
+      this post from being saved:
+    </h2>
+    <ul>
+    <li>
+    <div class="alert alert-success alert-dismissable">
+      <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <% @post.errors.full_messages.each do |msg| %>
+
+
+
+        <%= msg %>
+        <% end %>
+
+
+      </div>
+    </li>
+    </ul>
+   </div>
+ <% end %>
 <section class="container-fluid ">
   <%= form_for @post, :html => {:class =>"form"} do |f| %>
   <section class="content-box">
     <p>
       <%= f.label :title %><br>
       <%= f.text_field :title %>
+    </p>
+  </section>
+  <section class="author_name">
+    <p>
+      <%= f.label :blog_author %><br>
+      <%= f.text_field :blog_author %>
     </p>
   </section>
   <section class="content-box">
