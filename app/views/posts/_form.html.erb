@@ -13,7 +13,7 @@
      <% end %>
 
   <section class="container-fluid ">
-  <%= form_for @post, :html => {:class =>"form"} do |f| %>
+  <%= form_for @post, :html => {:class =>"form"}, :validate => true do |f| %>
   <section class="content-box">
     <p>
       <%= f.label :title %><br>
@@ -37,5 +37,10 @@
       <%= f.submit %>
     </p>
   <% end %>
+  <button type="button" class="btn btn-default create">
+    <span>
+      <%= link_to 'Go Back', posts_path %>
+    </span>
+  </button>
   </section>
 </section>
