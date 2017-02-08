@@ -1,24 +1,25 @@
-<% if flash[:notice] %>
-   <div><%= flash[:notice] %></div>
- <% end %>
-<h1>Welcome to my world</h1>
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Content</th>
-  </tr>
 
-  <% @posts.each do |post| %>
-    <tr>
-      <td><%= post.title %></td>
-      <td><%= post.content %></td>
-      <td><%= link_to 'Show', post_path(post) %></td>
-      <td><%= link_to 'Edit', edit_post_path(post) %></td>
-      <td><%= link_to 'Delete', post_path(post),
-              method: :delete,
-              data: { confirm: 'Are you sure?' } %>
-      </td>
-    </tr>
-  <% end %>
-</table>
-<%= link_to 'Create a blog post here', new_post_path %>
+<section class="container-fluid content-body">
+  <section class="container content-post">
+   <% if flash[:notice] %>
+     <div><%= flash[:notice] %></div>
+   <% end %>
+    <article class="blog-post">
+       <% @posts.each do |post| %>
+       <header class="blog-header"><%= post.title %></header>
+        <section class="blog-content"><%= post.content %></section>
+         <footer> <%= link_to 'Edit', edit_post_path(post) %>
+                  <%= link_to 'Delete', post_path(post),
+                          method: :delete,
+                          data: { confirm: 'Are you sure?' } %>
+         </footer>
+       <% end %>
+    </article>
+  </section>
+</section>
+
+<button type="button" class="btn btn-default">
+  <span>
+    <%= link_to 'Create a blog post here', new_post_path %>
+  </span>
+</button>
