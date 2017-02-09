@@ -9,4 +9,6 @@ class Post < ApplicationRecord
   validates :content, presence: true,
                       length: {minimum: 250, maximum: 2000},
                       uniqueness: {case_sensitive: false}
+
+  has_many :comments
 end

@@ -13,6 +13,21 @@
   <%= @post.content %>
 </p>
 
+<strong>Comments</strong>
+<% @post.comments.each do |comment| %>
+  <p>
+    <strong>Name:</strong>
+    <%= comment.name %>
+  </p>
 
+  <p>
+    <strong>Content:</strong>
+    <%= comment.content %>
+  </p>
+<% end %>
+
+
+
+<%= link_to 'Add a new comment', new_post_comment_path(@post) %>
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>
