@@ -22,11 +22,11 @@
   margin-top:55px;
 }
 
-.right-top .social-nav {
+.right-top .btn-create {
   margin-left:150px;
   margin-top:100px;
+  color: #000;
 }
-
 .content {
   background-color: white;
 }
@@ -45,4 +45,10 @@
   color: #D00;
   padding-left: 5px;
   font-size: 12px;
+}
+
+@media screen and (max-width: 700px) {
+  .left-top {
+    font-size: 20px;
+  }
 }
