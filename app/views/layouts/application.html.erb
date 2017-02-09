@@ -18,9 +18,8 @@
         <p>Hey welcome to my<br /> humble blog!</p>
       </section>
       <section class="col-xs-4 middle-top">
-
-          <img src="http://i.imgur.com/Ghn3XpP.png" alt="Ash Profile Photo" class="img-circle img-responsive" width="200px" height="200px"/>
-
+          <%= link_to image_tag("http://i.imgur.com/Ghn3XpP.png", :alt => "Ash Profile Photo",
+          :class => "img-circle img-responsive profile-image"), posts_path %>
       </section>
       <section class="col-xs-4 right-top">
 
