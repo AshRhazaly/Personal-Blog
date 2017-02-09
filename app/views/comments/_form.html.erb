@@ -1,3 +1,9 @@
+<% if flash[:notice] %>
+       <div class="alert alert-success alert-dismissable">
+         <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+         <strong><%= flash[:notice] %></strong>
+       </div>
+     <% end %>
 <section class="container-fluid ">
 <%= form_for ([@post,@post.comments.build]),:validate => true, :html=>{:class =>"form"} do |f| %>
 <section class="content-box">

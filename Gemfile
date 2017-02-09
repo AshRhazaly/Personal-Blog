@@ -4,6 +4,7 @@ git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
 end
+gem 'validates_email_format_of'
 gem 'kaminari'
 gem 'client_side_validations'
 gem 'bootstrap-sass', '~> 3.3.6'
