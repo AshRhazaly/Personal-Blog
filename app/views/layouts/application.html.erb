@@ -22,14 +22,11 @@
           :class => "img-circle img-responsive profile-image"), posts_path %>
       </section>
       <section class="col-xs-4 right-top">
-
-
-                <%= link_to 'Create a blog post here', new_post_path, class:"btn btn-default btn-create" %>
-
-
+        <%= link_to 'Create a blog post here', new_post_path, class:"btn btn-default btn-create" %>
       </section>
     </header>
 
     <%= yield %>
+    <%= paginate @posts %>
   </body>
 </html>
