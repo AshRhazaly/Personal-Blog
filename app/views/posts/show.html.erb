@@ -16,13 +16,16 @@
 </section>
 <hr />
 <section class="blog-content">
-<strong>Comments</strong>
+<h4>Comments</h4>
 <% @post.comments.each do |comment| %>
   <p>
     <strong>Name:</strong>
     <%= comment.name %>
   </p>
-
+  <p>
+    <strong>Email:</strong>
+    <%= comment.email %>
+  </p>
   <p>
     <strong>Content:</strong>
     <%= comment.content %>

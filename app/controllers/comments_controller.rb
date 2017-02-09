@@ -23,7 +23,7 @@ class CommentsController < ApplicationController
   # GET /posts/1/comments/21/edit
   def edit
     @post = Post.find(params[:post_id])
-    @comment = @post.comments.find(params[:id])
+    @comment = Comment.find(params[:id])
   end
 
   # POST /comments
@@ -37,6 +37,13 @@ class CommentsController < ApplicationController
   # PATCH/PUT /comments/1
   # PATCH/PUT /comments/1.json
   def update
+    @post = Post.find(params[:post_id])
+    @comment = Comment.find(params[:id])
+    if @comment.update(comment_params)
+      redirect_to posts_path(@post)
+    else
+      render 'new'
+    end
 
   end
 
@@ -54,6 +61,6 @@ class CommentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def comment_params
-      params.require(:comment).permit(:name, :content)
+      params.require(:comment).permit(:name,:email, :content)
     end
 end
