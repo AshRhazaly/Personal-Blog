@@ -11160,3 +11160,11 @@ Processing by PostsController#index as HTML
 Completed 200 OK in 56ms (Views: 52.1ms | ActiveRecord: 0.3ms)
 
 
+Started GET "/posts/new" for 127.0.0.1 at 2017-02-08 18:27:54 +0800
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (14.1ms)
+  Rendered posts/new.html.erb within layouts/application (17.8ms)
+Completed 200 OK in 89ms (Views: 80.9ms | ActiveRecord: 0.0ms)
+
+

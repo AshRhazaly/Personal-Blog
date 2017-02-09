@@ -1,17 +1,3 @@
-
-<% if @post.errors.any? %>
-       <div id="error_explanation">
-         <ul>
-           <% @post.errors.full_messages.each do |msg| %>
-             <div class="alert alert-danger alert-dismissable">
-               <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-               <strong><%= msg %></strong>
-             </div>
-           <% end %>
-         </ul>
-       </div>
-     <% end %>
-
   <section class="container-fluid ">
   <%= form_for @post, :html => {:class =>"form"}, :validate => true do |f| %>
   <section class="content-box">
@@ -32,15 +18,13 @@
       <%= f.text_area :content, :class =>"content-area" %>
     </p>
   </section>
-  <section>
-    <p>
-      <%= f.submit %>
-    </p>
+  <footer class="form-bottom">
+
+      <%= f.submit 'Submit', :class =>"btn btn-default"%>
+      <%= link_to 'Go Back', posts_path, class: "btn btn-default" %>
   <% end %>
-  <button type="button" class="btn btn-default create">
-    <span>
-      <%= link_to 'Go Back', posts_path %>
-    </span>
-  </button>
-  </section>
+</footer>
+
+
+
 </section>
