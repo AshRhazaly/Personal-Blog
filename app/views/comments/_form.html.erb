@@ -1,4 +1,4 @@
-<h2>Add a comment:</h2>
+<!-- <h2>Add a comment:</h2>
 <%= form_for ([@post, @post.comments.build]) do |f| %>
   <p>
     <%= f.label :name %><br>
@@ -12,4 +12,27 @@
     <%= f.submit %>
   </p>
 
+<% end %> -->
+
+<section class="container-fluid ">
+<%= form_for ([@post,@post.comments.build]), :html=>{:class =>"form"} do |f| %>
+<section class="content-box">
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+</section>
+<section class="content-box">
+  <p>
+    <%= f.label :content %><br>
+    <%= f.text_area :content, :class =>"content-area" %>
+  </p>
+</section>
+<footer class="form-bottom">
+
+    <%= f.submit 'Submit', :class =>"btn btn-default"%>
+    <%= link_to 'Go Back', post_path(@post), class: "btn btn-default" %>
 <% end %>
+</footer>
+
+</section>
