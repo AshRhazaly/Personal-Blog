@@ -1,0 +1,34 @@
+<% if flash[:notice] %>
+       <div class="alert alert-success alert-dismissable">
+         <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+         <strong><%= flash[:notice] %></strong>
+       </div>
+     <% end %>
+<section class="container-fluid ">
+<%= form_for ([@post,@post.comments.build]),:validate => true, :html=>{:class =>"form"} do |f| %>
+<section class="content-box">
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+</section>
+<section class="content-box">
+  <p>
+    <%= f.label :email %><br>
+    <%= f.email_field :email %>
+  </p>
+</section>
+<section class="content-box">
+  <p>
+    <%= f.label :content %><br>
+    <%= f.text_area :content, :class =>"content-area" %>
+  </p>
+</section>
+<footer class="form-bottom">
+
+    <%= f.submit 'Submit', :class =>"btn btn-default"%>
+    <%= link_to 'Go Back', post_path(@post), class: "btn btn-default" %>
+<% end %>
+</footer>
+
+</section>
